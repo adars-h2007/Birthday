@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 18th Birthday, Mrunal!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffd1dc 0%, #e0c3fc 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', 'Cursive', sans-serif;
+      color: #5a3566;
+      overflow-x: hidden;
+    }
+    .confetti {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .container {
+      max-width: 420px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.87);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px #e0c3fc88;
+      padding: 30px 30px 50px 30px;
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      font-size: 2.1em;
+      margin-bottom: 0.4em;
+      background: linear-gradient(90deg, #ea80fc 30%, #ffcc80 70%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .message {
+      font-size: 1.12em;
+      margin-bottom: 1.3em;
+      color: #694d6d;
+    }
+    .cake-container {
+      margin: 30px auto 18px auto;
+      cursor: pointer;
+      width: 140px;
+      height: 140px;
+      position: relative;
+    }
+    /* Simple Cake Illustration */
+    .cake {
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+      bottom: 10px;
+      width: 120px; height: 70px;
+      background: #ffe0b2;
+      border-radius: 0 0 40px 40px / 0 0 30px 30px;
+      box-shadow: 0 3px 18px #cdbacd99;
+      border: 2.5px solid #f9c7bc;
+      z-index: 2;
+    }
+    .cake .candles {
+      position: absolute;
+      top: -22px;
+      left: 45px;
+      display: flex;
+      gap: 13px;
+    }
+    .cake .candles .candle {
+      width: 7px;
+      height: 22px;
+      background: #e0c3fc;
+      border-radius: 3px;
+      position: relative;
+    }
+    .cake .candles .candle::after {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 13px;
+      border-radius: 40% 40% 60% 60%;
+      background: radial-gradient(circle at 50% 17%, #ffe19c 85%, #fffefd 100%);
+      position: absolute;
+      top: -13px; left: 0;
+      box-shadow: 0 0 8px #ffd70099;
+      animation: flicker 1.6s infinite linear;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      10% { opacity: 0.9; }
+      18% { opacity: 1; }
+      30% { opacity: 0.66; }
+      42% { opacity: 1; }
+      51% { opacity: 0.82; }
+      72% { opacity: 0.96; }
+      100% { opacity: 1; }
+    }
+    /* Balloons */
+    .balloon-zone {
+      margin: 16px 0 12px 0;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+    .balloon {
+      width: 38px; height: 54px;
+      background: radial-gradient(circle, #ffb3ba 85%, #efd7f7 100%);
+      border-radius: 50% 50% 46% 46% / 60% 60% 65% 80%;
+      border: 2.5px solid #ef92d3;
+      position: relative;
+      cursor: pointer;
+      animation: bounce 1.9s infinite;
+      z-index: 2;
+      transition: opacity 0.4s;
+    }
+    .balloon:nth-child(2) {
+      background: radial-gradient(circle, #b2dfdb 82%, #f3e8ee 100%);
+      border: 2.5px solid #7ed6df;
+      animation-delay: 0.7s;
+    }
+    .balloon:nth-child(3) {
+      background: radial-gradient(circle, #fff3c2 87%, #f9e7ca 100%);
+      border: 2.5px solid #ffd700;
+      animation-delay: 1.3s;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(-4px); }
+      40% { transform: translateY(-17px); }
+      70% { transform: translateY(-4px);}
+      100% { transform: translateY(-7px);}
+    }
+    .balloon::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 45%; bottom: -11px;
+      width: 4px; height: 13px;
+      background: #cfb2db;
+      border-radius: 7px;
+    }
+    /* Heartfelt Message Animation */
+    #heartfelt {
+      margin: 22px auto;
+      font-size: 1.11em;
+      min-height: 96px;
+      color: #6a397b;
+      letter-spacing: 0.2px;
+    }
+    /* Button styling */
+    .share-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 9px 19px;
+      border-radius: 23px;
+      background: linear-gradient(90deg, #ea80fc 40%, #ffd1dc 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1em;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #e0c3fc44;
+      transition: box-shadow 0.2s;
+    }
+    .share-btn:hover {
+      box-shadow: 0 4px 18px #b786eb56;
+      background: linear-gradient(90deg, #ffd1dc 30%, #ea80fc 80%);
+    }
+    /* Responsive */
+    @media (max-width: 520px){
+      .container { padding: 15px 4vw 40px 4vw; }
+      h1 { font-size: 1.32em; }
+    }
+  </style>
+</head>
+<body>
+  <canvas class="confetti"></canvas>
+  <div class="container">
+    <h1>Happy 18th Birthday, my sweet sister!</h1>
+    <div class="message">You’ve grown into an amazing person — beautiful, kind, and strong.</div>
+    <div class="cake-container" onclick="popConfettiCake()">
+      <div class="cake">
+        <div class="candles">
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+        </div>
+      </div>
+      <span style="display:block;font-size:1em;color:#ba7baf;margin-top:77px;">Click the cake 🍰</span>
+    </div>
+    <div class="balloon-zone">
+      <div class="balloon" onclick="floatBalloon(this)"></div>
+      <div class="balloon" onclick="floatBalloon(this)"></div>
+      <div class="balloon" onclick="floatBalloon(this)"></div>
+    </div>
+    <div id="heartfelt"></div>
+    <button class="share-btn" onclick="shareCard()">Share Card</button>
+  </div>
+
+  <audio id="bgmusic" loop autoplay>
+    <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_123b3f3d7f.mp3" type="audio/mp3">
+    <!-- Royalty free gentle melody; replace URL if needed -->
+  </audio>
+
+  <script>
+    // Heartfelt message typewriter effect
+    const heartfeltLines = [
+      "You’ll always be my little sister, no matter how old you get.",
+      "May your dreams shine brighter than these candles.",
+      "Love you always ❤"
+    ];
+    let lineIndex = 0;
+    function showHeartfelt() {
+      const heartfelt = document.getElementById('heartfelt');
+      heartfelt.innerHTML = '';
+      lineIndex = 0;
+      function revealLine() {
+        if (lineIndex < heartfeltLines.length) {
+          heartfelt.innerHTML += heartfeltLines[lineIndex] + "<br>";
+          lineIndex++;
+          setTimeout(revealLine, 1100);
+        }
+      }
+      revealLine();
+    }
+    window.onload = showHeartfelt;
+
+    // Confetti Animation
+    const confettiColors = ['#FFD1DC', '#EA80FC', '#B2DFDB', '#FFF3C2', '#FCF4FE'];
+    const canvas = document.querySelector('.confetti');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+    window.addEventListener('resize',resizeCanvas);resizeCanvas();
+
+    let confettiArray = [];
+    function randomConfetti(num) {
+      confettiArray = [];
+      for(let i=0;i<num;i++){
+        confettiArray.push({
+          x: Math.random()*canvas.width,
+          y: Math.random()*canvas.height*0.3,
+          r: Math.random()*7+5,
+          color: confettiColors[Math.floor(Math.random()*confettiColors.length)],
+          vx: Math.random()*1.6-0.8,
+          vy: Math.random()*2+2.4
+        });
+      }
+    }
+    function popConfettiCake(){
+      randomConfetti(46);
+      setTimeout(()=>{confettiArray=[];},3300);
+    }
+    // Animate confetti
+    function animateConfetti(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      confettiArray.forEach(c=>{
+        ctx.beginPath();
+        ctx.arc(c.x,c.y,c.r,0,Math.PI*2);
+        ctx.fillStyle=c.color;
+        ctx.globalAlpha=0.88;
+        ctx.fill();
+        // motion
+        c.x += c.vx;
+        c.y += c.vy;
+        c.r -= 0.03;
+      });
+      confettiArray = confettiArray.filter(c=>c.y < canvas.height && c.r > 2.9);
+      requestAnimationFrame(animateConfetti);
+    }
+    animateConfetti();
+
+    // Balloons floating
+    function floatBalloon(balloon){
+      let rect = balloon.getBoundingClientRect();
+      balloon.style.transition = "all 2.2s cubic-bezier(.6,.1,1,.7)";
+      balloon.style.transform = "translateY(-"+(window.innerHeight * 0.7 + Math.random()*100)+"px) scale(1.04)";
+      balloon.style.opacity = "0";
+      setTimeout(()=>{ balloon.style.display = 'none'; }, 1700);
+    }
+
+    // Share card uses native navigator share, fallback to URL
+    function shareCard(){
+      if (navigator.share) {
+        navigator.share({
+          title: "Happy 18th Birthday Mrunal!",
+          text: "A digital birthday card for my sister — click the cake and balloons! 🎂🎈",
+          url: window.location.href
+        });
+      } else {
+        alert("Copy the card link from your browser's address bar to share!");
+      }
+    }
+
+    // On load confetti
+    randomConfetti(36);
+  </script>
+</body>
+</html>
