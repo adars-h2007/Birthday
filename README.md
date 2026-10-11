@@ -1,37 +1,46 @@
+<div align="center">
+
 # 🎂 Birthday
 
-A personal birthday wish web page, made with HTML and shared as a link.
+**A birthday wish website, made with love and a little HTML.**
 
-**Live site:** https://birthday-orcin-eight-89.vercel.app
+[**View Live Site**](https://birthday-orcin-eight-89.vercel.app)
 
-<!-- Add a screenshot of the page here: ![Birthday page preview](screenshot.png) -->
+</div>
 
 ---
 
 ## About
 
-This is a small personal project: a single web page made to wish someone a happy birthday. It shows how a simple idea can go from a plain HTML file to a live link anyone can open on their phone or computer.
+A personal project: a single web page created as a heartfelt birthday greeting that can be shared with a simple link. No frameworks and no build step, just one HTML file, published online with Vercel.
 
-<!-- Optional: add one or two lines about who it was made for and why. -->
-
-## What's inside
-
-| File | Description |
-|---|---|
-| `hbdsis.html` | The birthday page: all of its content, styling and behaviour in one file |
-| `README.md` | This file |
+<!-- Add a screenshot or GIF of the page here, for example:
+![Birthday page preview](preview.png)
+-->
 
 ## Highlights
 
-<!-- Replace these with what your page actually has, for example: animations, a message, photos, music, confetti, a countdown. -->
+<!-- Edit this list to match what is on your page. Examples to keep or replace:
+- A personal birthday message
+- Animations or effects
+- Background music
+- Photos or a memory section
+- Mobile-friendly layout
+-->
 
-- A single self-contained page with no installation or build step
-- Opens in any modern browser on desktop or mobile
-- Hosted online so it can be shared with a single link
+- A personal birthday greeting on a single, shareable page
+- Built with plain HTML, with nothing to install
+- Live on the web, so it opens from any device with just a link
+
+## Project structure
+
+```
+Birthday/
+├── hbdsis.html    # The birthday page
+└── README.md
+```
 
 ## Run locally
-
-No installation is needed.
 
 1. Clone the repository:
    ```bash
@@ -42,23 +51,23 @@ No installation is needed.
 
 ## Deploy your own copy
 
-The page is static, so it works on any static host.
+The page is static, so any static host works.
 
-**Vercel (current setup):**
+**Vercel (used for the live site)**
 
 1. Push the repository to GitHub.
-2. Import it in [Vercel](https://vercel.com/).
+2. Import it at [vercel.com/new](https://vercel.com/new).
 3. Deploy with the default settings. No build command is needed.
 
-> Tip: to make the page open at the site's root address, rename `hbdsis.html` to `index.html`.
+> The live link opens at the site root. To make the root URL show the page directly, either rename `hbdsis.html` to `index.html`, or add a `vercel.json` rewrite pointing `/` to `hbdsis.html`.
 
 **GitHub Pages:** go to *Settings → Pages*, choose the `main` branch and the root folder, and save.
 
-## Customise it
+## Make it your own
 
-- **Change the message or names:** open `hbdsis.html` in any editor and edit the text.
-- **Change colours or fonts:** edit the CSS inside the file.
-- **Add photos:** put the images in the repo next to the page and reference them in the HTML.
+1. Open `hbdsis.html` in any code editor.
+2. Change the name, message and any photos to personalise it.
+3. Commit and push. Vercel redeploys automatically.
 
 ## Tech used
 
@@ -75,4 +84,4 @@ The page is static, so it works on any static host.
 
 ---
 
-Made with ❤️ for a special birthday.
+<div align="center">Made with ❤️ by Adarsh</div>
